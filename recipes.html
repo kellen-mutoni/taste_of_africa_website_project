@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taste of Africa | Recipes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">Taste of Africa</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="east-africa.html">East Africa</a></li>
+                <li><a href="west-africa.html">West Africa</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Recipes</h1>
+        <div class="filters">
+            <button data-filter="all">All</button>
+            <button data-filter="east-africa">East Africa</button>
+            <button data-filter="west-africa">West Africa</button>
+        </div>
+
+        <section class="recipe-list">
+            <article class="recipe-card" data-region="east-africa">
+                <img src="images/isombe.jpg" alt="A plate of isombe">
+                <h2>Isombe</h2>
+                <p>A Rwandan dish of pounded cassava leaves, slow cooked until soft and rich.</p>
+                <a href="isombe.html">View recipe</a>
+                <button class="fav-btn" data-id="isombe">🤍 Favorite</button>
+            </article>
+            <article class="recipe-card" data-region="east-africa">
+                <img src="images/rolex.jpg" alt="A rolex, an egg and chapati roll">
+                <h2>Rolex</h2>
+                <p>Ugandan street food: an egg omelette rolled inside a chapati.</p>
+                <a href="rolex.html">View recipe</a>
+                <button class="fav-btn" data-id="rolex">🤍 Favorite</button>
+            </article>
+            <article class="recipe-card" data-region="west-africa">
+                <img src="images/jollof-rice.jpg" alt="A bowl of jollof rice">
+                <h2>Jollof Rice</h2>
+                <p>A Nigerian party favourite: rice cooked in a spiced tomato and pepper sauce.</p>
+                <a href="jollof-rice.html">View recipe</a>
+                <button class="fav-btn" data-id="jollof-rice">🤍 Favorite</button>
+            </article>
+            <article class="recipe-card" data-region="west-africa">
+                <img src="images/kelewele.jpg" alt="A plate of kelewele, spiced fried plantain">
+                <h2>Kelewele</h2>
+                <p>Ghanaian fried plantain seasoned with ginger, pepper, and cloves.</p>
+                <a href="kelewele.html">View recipe</a>
+                <button class="fav-btn" data-id="kelewele">🤍 Favorite</button>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Taste of Africa</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Lora:wght@400;600&display=swap');
+
+:root {
+    --yellow: #E9C77F;
+    --maroon: #6E0F2E;
+    --dark: #141414;
+    --white: #FFFFFF;
+    --bg: var(--white);
+    --text: var(--dark);
+    --accent: var(--maroon);
+}
+
+/* dark mode swaps the page colors */
+body.dark {
+    --bg: var(--dark);
+    --text: var(--white);
+    --accent: var(--yellow);
+}
+
+/* box-sizing makes padding stay inside an element's width */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+}
+
+main a {
+    color: var(--accent);
+}
+
+/* header and menu, maroon bar */
+header {
+    background-color: var(--maroon);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--yellow);
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+/* hero: background photo with a dark tint, just the welcome heading */
+.hero {
+    background-image: linear-gradient(rgba(20, 20, 20, 0.55), rgba(20, 20, 20, 0.55)), url('images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.hero h1 {
+    color: var(--white);
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* intro: welcome line and video under the hero */
+.intro {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.intro iframe {
+    width: 100%;
+    max-width: 640px;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 12px;
+    margin: 1.5rem auto 0;
+}
+
+/* featured dishes as cards in a grid */
+.featured {
+    padding: 3rem 2rem;
+}
+
+.featured h2 {
+    text-align: center;
+}
+
+.dish-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.dish-card {
+    margin: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.dish-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.dish-card figcaption {
+    padding: 1rem;
+}
+
+/* highlighted ingredients use a custom gold color instead of the default bright yellow */
+mark {
+    background-color: var(--yellow);
+    color: var(--maroon);
+}
+
+/* region links as oval outlined buttons */
+.regions {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.regions ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.regions a {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--accent);
+    border-radius: 50px;
+    color: var(--accent);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.regions a:hover {
+    background-color: var(--maroon);
+    color: var(--white);
+}
+
+/* latest food trends as a maroon block */
+.trends {
+    background-color: var(--maroon);
+    color: var(--white);
+    padding: 3rem 2rem;
+}
+
+.trends h2 {
+    color: var(--white);
+    text-align: center;
+}
+
+.trends h3 {
+    color: var(--yellow);
+}
+
+.trends article {
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+/* footer matches the header so every page feels framed */
+footer {
+    background-color: var(--maroon);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--yellow);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* filter buttons use the same oval outline as the region buttons */
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 2rem;
+}
+
+.filters button {
+    font-family: 'Lora', serif;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid var(--accent);
+    border-radius: 50px;
+    background-color: transparent;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background-color: var(--maroon);
+    color: var(--white);
+}
+
+/* recipe cards in a grid with even spacing */
+.recipe-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 2rem 3rem;
+}
+
+.recipe-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.recipe-card h2,
+.recipe-card p,
+.recipe-card a,
+.recipe-card button {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.recipe-card a {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+/* favorite button matches the oval style of the other buttons */
+.fav-btn {
+    font-family: 'Lora', serif;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--accent);
+    border-radius: 50px;
+    background-color: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.fav-btn:hover {
+    background-color: var(--yellow);
+    color: var(--dark);
+}
+
+/* inner pages: keep the text in a centered, readable column */
+main>h1,
+main>p,
+main>details,
+main>form,
+main>section:not([class]) {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+main>h1 {
+    text-align: center;
+}
+
+/* the big dish photo at the top of each recipe page */
+main>img {
+    display: block;
+    width: 90%;
+    max-width: 700px;
+    height: 380px;
+    object-fit: cover;
+    margin: 1.5rem auto;
+    border-radius: 12px;
+}
+
+/* embedded videos and maps scale to fit the page */
+main>section iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 12px;
+}
+
+/* expandable cooking instructions as an outlined box */
+details {
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+summary {
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+}
+
+/* ingredient and step lists: more breathing room and matching markers */
+main li {
+    margin-bottom: 0.4rem;
+}
+
+main li::marker {
+    color: var(--accent);
+}
+
+/* contact form: stacked fields with a glow when you click into one */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 3rem;
+}
+
+#contact-form label {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+}
+
+#contact-form input,
+#contact-form textarea {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px var(--accent);
+}
+
+#contact-form button {
+    align-self: flex-start;
+    margin-top: 1.5rem;
+    font-family: 'Lora', serif;
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--maroon);
+    border-radius: 50px;
+    background-color: var(--maroon);
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: var(--yellow);
+    color: var(--maroon);
+}
+
+/* mission statement as a maroon block */
+.mission {
+    background-color: var(--maroon);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.mission h2 {
+    color: var(--white);
+}
+
+.mission p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+}
+
+/* phones and small tablets: stack the header and shrink the hero */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+/* dark mode button: gold oval outline that fits the maroon header */
+#theme-toggle {
+    font-family: 'Lora', serif;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--yellow);
+    border-radius: 50px;
+    background-color: transparent;
+    color: var(--yellow);
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    background-color: var(--yellow);
+    color: var(--maroon);
+}
