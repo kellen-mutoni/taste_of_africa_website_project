@@ -432,6 +432,56 @@ main li::marker {
     font-size: 1.15rem;
 }
 
+/* newsletter form in the footer: small and tidy on the maroon bar */
+#newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+#newsletter-form label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+}
+
+#newsletter-form input {
+    font-family: 'Lora', serif;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--yellow);
+    border-radius: 8px;
+}
+
+#newsletter-form button {
+    font-family: 'Lora', serif;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid var(--yellow);
+    border-radius: 50px;
+    background-color: transparent;
+    color: var(--yellow);
+    cursor: pointer;
+}
+
+#newsletter-form button:hover {
+    background-color: var(--yellow);
+    color: var(--maroon);
+}
+
+/* cards lift up a little when I hover over them */
+.dish-card,
+.recipe-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dish-card:hover,
+.recipe-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* phones and small tablets: stack the header and shrink the hero */
 @media (max-width: 768px) {
     header {

@@ -134,29 +134,44 @@ if (ingredientsHeading) {
 }
 
 function toNumber(text) {
-  if (text.includes(' ')) {
-    const parts = text.split(' ');
-    const fraction = parts[1].split('/');
-    return Number(parts[0]) + Number(fraction[0]) / Number(fraction[1]);
-  }
-  if (text.includes('/')) {
-    const fraction = text.split('/');
-    return Number(fraction[0]) / Number(fraction[1]);
-  }
-  return Number(text);
+    if (text.includes(' ')) {
+        const parts = text.split(' ');
+        const fraction = parts[1].split('/');
+        return Number(parts[0]) + Number(fraction[0]) / Number(fraction[1]);
+    }
+    if (text.includes('/')) {
+        const fraction = text.split('/');
+        return Number(fraction[0]) / Number(fraction[1]);
+    }
+    return Number(text);
 }
 
 const numberPattern = /\d+\s\d+\/\d+|\d+\/\d+|\d+/g;
 
 if (servingsSelect) {
-  servingsSelect.addEventListener('change', function () {
-    const multiplier = Number(servingsSelect.value);
+    servingsSelect.addEventListener('change', function () {
+        const multiplier = Number(servingsSelect.value);
 
-    ingredientItems.forEach(function (item, index) {
-      item.textContent = originalTexts[index].replace(numberPattern, function (match) {
-        const scaled = toNumber(match) * multiplier;
-        return Math.round(scaled * 100) / 100;
-      });
+        ingredientItems.forEach(function (item, index) {
+            item.textContent = originalTexts[index].replace(numberPattern, function (match) {
+                const scaled = toNumber(match) * multiplier;
+                return Math.round(scaled * 100) / 100;
+            });
+        });
     });
-  });
 }
+
+// newsletter signup: Adds a small form to the footer on every page
+const siteFooter = document.querySelector('footer');
+const newsletterForm = document.createElement('form');
+newsletterForm.id = 'newsletter-form';
+newsletterForm.innerHTML =
+    '<label for="newsletter-email">Join our newsletter</label>' +
+    '<input type="email" id="newsletter-email" placeholder="Your email" required>' +
+    '<button type="submit">Subscribe</button>';
+siteFooter.prepend(newsletterForm);
+
+newsletterForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    newsletterForm.textContent = 'Thanks for subscribing!';
+});
